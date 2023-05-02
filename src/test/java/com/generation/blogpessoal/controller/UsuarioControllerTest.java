@@ -1,5 +1,7 @@
 package com.generation.blogpessoal.controller;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.util.Optional;
 
 import org.junit.jupiter.api.BeforeAll;
@@ -92,6 +94,6 @@ public class UsuarioControllerTest {
 				.withBasicAuth("root@root.com","rootroot")
 				.exchange("/usuarios/all", HttpMethod.GET, null, String.class);
 		
-		assertEquals(HttpStatus.BAD_REQUEST, resposta.getStatusCode());
+		assertEquals(HttpStatus.OK, resposta.getStatusCode());
 	}
 }
